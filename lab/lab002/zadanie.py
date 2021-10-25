@@ -8,7 +8,7 @@ import math
 parser = argparse.ArgumentParser(description="Algorytm Monte Carlo do modelu Isinga")
 parser.add_argument('siatka', help='rozmiar kwadratowej siatki', type=int)
 parser.add_argument('J', help='całka wymiany', type=float)
-parser.add_argument('beta', help='parametr beta', type=int)
+parser.add_argument('beta', help='parametr beta', type=float)
 parser.add_argument('B', help='pole magnetyczne', type=float)
 parser.add_argument('l', help='liczba kroków symulacji', type=int)
 parser.add_argument('-g', '--g', help='początkowa gęstość spinów up', type=float, default=0.5)
@@ -113,9 +113,11 @@ energiaCalkowita = 0
 
 
 ##########################
+d = 0
 
+for iter in track(range(l*rozmiar)):
 
-for iter in track(range(l)):
+    d = d + 1
 
     rand = randint(0, rozmiar-1)
     spinka = s._list[rand]   # losowanie spinu
@@ -157,6 +159,8 @@ for iter in track(range(l)):
 
     deltaH = H1 - H0
 
+    H0 = H1
+
 
     # prawdopodobieństwo akceptacji dla dodatniej delty H
     if (deltaH > 0):
@@ -171,8 +175,8 @@ for iter in track(range(l)):
             if (s._list[i*args.siatka+j] > 0):
                 draw.rectangle(((j*10, i*10), (j*10+9, i*10+9)), (254, 213, 66))
 
-
-    image.save(f'img\{name}{iter}.png')
+    if (iter % rozmiar == 0):
+        image.save(f'img\{name}{iter}.png')
 
 
     
