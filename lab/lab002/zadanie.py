@@ -113,11 +113,8 @@ energiaCalkowita = 0
 
 
 ##########################
-d = 0
 
 for iter in track(range(l*rozmiar)):
-
-    d = d + 1
 
     rand = randint(0, rozmiar-1)
     spinka = s._list[rand]   # losowanie spinu
@@ -176,7 +173,7 @@ for iter in track(range(l*rozmiar)):
                 draw.rectangle(((j*10, i*10), (j*10+9, i*10+9)), (254, 213, 66))
 
     if (iter % rozmiar == 0):
-        image.save(f'img\{name}{iter}.png')
+        image.save(f'img\{name}{iter/rozmiar}.png')
 
 
     
