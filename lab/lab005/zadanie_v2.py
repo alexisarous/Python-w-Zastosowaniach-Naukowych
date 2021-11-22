@@ -70,8 +70,8 @@ data = generate_data()
 
 bes = figure(width = 1100, x_axis_label = 'Modulacja fazowa [rad]', y_axis_label = 'Wydajność dyfrakcyjna [%]', y_range = (0, 30), x_range = (0, width))
 
-g1 = bes.line('xB', 'yB1', source = data)
-g2 = bes.line('xB', 'yB2', source = data, color = 'red')
+g1 = bes.line('xB', 'yB1', source = data, legend_label = "1 rząd funkcji Bessela")
+g2 = bes.line('xB', 'yB2', source = data, color = 'red', legend_label = "2 rząd funkcji Bessela")
 
 bes.toolbar.logo = None
 bes.toolbar.autohide = True
@@ -86,12 +86,12 @@ slider.on_change('value_throttled', callback)
 
 
 bes.extra_x_ranges['foo'] = Range1d(0, 130)
-bes.circle('x', 'y', source = dataFig, color = 'navy', x_range_name="foo")
-bes.circle('x', 'y2', source = dataFig, color = 'crimson', x_range_name="foo")
+bes.circle('x', 'y', source = dataFig, color = 'navy', x_range_name="foo", legend_label = "+1 rząd ugięcia")
+bes.circle('x', 'y2', source = dataFig, color = 'crimson', x_range_name="foo", legend_label = "-2 rząd ugięcia")
 
 ax2 = LinearAxis(x_range_name="foo", axis_label="Czas [min]")
-ax2.axis_label_text_color ="navy"
-bes.add_layout(ax2, 'above')
+#ax2.axis_label_text_color ="navy"
+bes.add_layout(ax2, 'below')
 
 
 
