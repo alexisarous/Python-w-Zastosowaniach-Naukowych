@@ -97,6 +97,7 @@ print(f'Średnia najkrótsza ścieżka: {av}')
 print(f'Najdłuższa najkrótsza ścieżka: {max_path}')
 
 ####################################################################
+plt.close()
 
 fig = plt.figure(1, figsize=(200, 80), dpi=60)
 nx.draw(G, with_labels=True, font_weight='normal')
