@@ -25,11 +25,9 @@ with open('musae_chameleon_edges.csv', 'r') as edges:
         for word in line:
             if left:
                 l = int(word) + 1
-                #id1.append(int(word)+1)
                 left = False
             else:
                 r = int(word) + 1
-                #id2.append(int(word)+1)
                 left = True
 
         G.add_edge(l, r)
