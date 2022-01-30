@@ -64,7 +64,7 @@ for line in degrees:
 
 print(y_all)
 for i in y_all:                 # zamiana na %
-    y.append(i*100/sum)
+    y.append(i*i*100/sum)
 
 plt.plot(x, y)
 plt.xlabel("k")
