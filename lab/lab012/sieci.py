@@ -7,7 +7,7 @@ from rich.progress import track
 
 G = nx.Graph()
 
-N = 2277 # liczba wierzchołków - 1
+N = 2277 # liczba wierzchołków
 E = 31421 # liczba krawędzi
 
 G.add_node(N)
