@@ -64,17 +64,13 @@ for line in degrees:
 for i in y_all:                 # zamiana na %
     y.append(i*100/sum)
 
-# plt.plot(x, y)
-# plt.xlabel("k")
-# plt.ylabel("P(k) [%]")
-# plt.title("Rozkład stopni wierzchołków")
-# plt.savefig('rozklad_stopni_wierzcholkow.png')
-
-
+plt.plot(x, y)
+plt.xlabel("k")
+plt.ylabel("P(k) [%]")
+plt.title("Rozkład stopni wierzchołków")
+plt.savefig('rozklad_stopni_wierzcholkow.png')
 
 print (f'1 spójna składowa o liczbie węzłów: {N} oraz krawędzi: {E}')
-print (N)
-    
 
 
 ##################### shortest path ###############################
@@ -101,7 +97,7 @@ print(f'Najdłuższa najkrótsza ścieżka: {max_path}')
 
 #####################################################################
 
-# fig = plt.figure(1, figsize=(200, 80), dpi=60)
-# nx.draw(G, with_labels=True, font_weight='normal')
-# plt.savefig('graph.png')
+fig = plt.figure(1, figsize=(200, 80), dpi=60)
+nx.draw(G, with_labels=True, font_weight='normal')
+plt.savefig('graph.png')
 
