@@ -62,7 +62,6 @@ for line in degrees:
     sum = sum + b
     prev = b
 
-print(y_all)
 for i in y_all:                 # zamiana na %
     y.append(i*i*100/sum)
 
