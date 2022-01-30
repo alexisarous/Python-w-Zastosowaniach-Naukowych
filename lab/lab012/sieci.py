@@ -49,6 +49,10 @@ for line in degrees:
     a, b = line
 
     if (b == prev):
+        for p in range(i):
+            y_all.pop()
+        for p in range(i):
+            y_all.append(i+1)
         i = i + 1
     else:
         i = 1
@@ -58,7 +62,7 @@ for line in degrees:
     sum = sum + b
     prev = b
 
-
+print(y_all)
 for i in y_all:                 # zamiana na %
     y.append(i*100/sum)
 
@@ -93,7 +97,7 @@ print(f'Średnia najkrótsza ścieżka: {av}')
 
 print(f'Najdłuższa najkrótsza ścieżka: {max_path}')
 
-#####################################################################
+####################################################################
 
 fig = plt.figure(1, figsize=(200, 80), dpi=60)
 nx.draw(G, with_labels=True, font_weight='normal')
